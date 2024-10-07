@@ -1,0 +1,63 @@
+theirGood_1
+----------------
+TGD_PK bigint [primarykey]
+TGD_DOCNR integer
+TGD_PNR integer
+TGD_STONES integer
+TGD_WEIGHT decimal
+TGD_AQP varchar
+TGD_PRICEM decimal
+TGD_PRICEE decimal
+TGD_PRICEL decimal
+TGD_ORDER integer ? [NULLBLE]
+TGD_TYPE integer ? [NULLBLE]
+TGD_SHAPE varchar
+TGD_MAKE integer ? [NULLBLE]
+TGD_MEASUR decimal [NULLBLE]
+TGD_MEASU2 decimal [NULLBLE]
+TGD_MEASU3 decimal [NULLBLE]
+TGD_TOTDEP decimal [NULLBLE]
+TGD_TABLEW integer [NULLBLE]
+TGD_CRHEIG integer [NULLBLE]
+TGD_GIRDLE varchar [NULLBLE]
+TGD_GIRDL2 varchar [NULLBLE]
+TGD_DRILLE bool [false]
+TGD_LAB varchar [NULLBLE]
+TGD_CERTNR bigint [NULLBLE]
+TGD_COLOR varchar [NULLBLE]
+TGD_CLARIT varchar [NULLBLE]
+TGD_POLISH varchar [NULLBLE]
+TGD_SYMMET varchar [NULLBLE]
+TGD_FLUORE varchar [NULLBLE]
+TGD_LABELC varchar [NULLBLE]
+TGD_SHAPE1 varchar [NULLBLE]
+TGD_SHAPE2 varchar [NULLBLE]
+TGD_SHAPE3 varchar [NULLBLE]
+TGD_SHAPE4 varchar [NULLBLE]
+TGD_MAKEFR varchar ? [NULLBLE]
+TGD_MAKETO varchar ? [NULLBLE]
+TGD_COLORF varchar [NULLBLE]
+TGD_COLORT varchar [NULLBLE]
+TGD_CLARI2 varchar [NULLBLE]
+TGD_CLARI3 varchar [NULLBLE]
+TGD_COLORE varchar ? [NULLBLE]
+TGD_INFO varchar [NULLBLE]
+TGD_ATOMIC bool [NULLBLE]
+TGD_CULET varchar [NULLBLE]
+TGD_REF bigint [NULLBLE]
+TGD_CERTDA datetime [NULLBLE]
+TGD_APPRAI varchar [NULLBLE]
+TGD_CERTPK bigint [NULLBLE]
+TGD_CUT varchar ? [NULLBLE]
+======================
+
+
+theirGood_2
+----------------
+TG_DOCNR integer
+TG_DATE datetime [NULLBLE]
+TG_ACCOUNT varchar
+TG_FACTOR decimal
+TG_ORDER varchar [NULLBLE]
+TG_INVNR varchar [NULLBLE]
+======================
