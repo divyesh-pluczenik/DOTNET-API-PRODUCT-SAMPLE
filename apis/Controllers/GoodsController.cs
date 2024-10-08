@@ -9,7 +9,7 @@ using RoughDataWebApi.apis.Dtos;
 
 namespace apis.Controllers
 {
-    [Route("api/goods")]
+    [Route("api/moudle-api-endpoint")] // sample : [Route("api/user")], [Route("api/sales")], [Route("api/registration")]
     [ApiController]
     public class GoodsController : ControllerBase
     {
@@ -30,35 +30,35 @@ namespace apis.Controllers
                 { "data", new List<object>() },
             };
 
-            if (_context.Goods == null)
+            if (_context.TableModel == null)
             {
-                results["message"] = "No goods available.";
+                results["message"] = "No tableData available.";
                 return NotFound(results);
             }
 
-            var query = _context.Goods.AsQueryable();
+            var query = _context.TableModel.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(searchDocnr))
             {
-                query = query.Where(g => g.TGD_DOCNR.Contains(searchDocnr));
+                query = query.Where(g => g.COL_3_STRNG.Contains(searchDocnr));
             }
             
             var totalCount = await query.CountAsync();
 
             
-            var goods = await query
+            var tableDataList = await query
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            if (!goods.Any())
+            if (!tableDataList.Any())
             {
-                var goodsDto = goods.Select(g => new GoodsDto(g)).ToList();
+                var TableDto = tableDataList.Select(g => new TableDto(g)).ToList();
 
                 results["success"] = true;
                 results["message"] = "Records found successfully";
-                results["count"] = goodsDto.Count;
-                results["data"] = goodsDto;
+                results["count"] = TableDto.Count;
+                results["data"] = TableDto;
                 return Ok(results);
             }
             else

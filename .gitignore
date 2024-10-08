@@ -120,3 +120,5 @@ apis/Migrations/20241008081842_InitialCreate.cs
 apis/Migrations/20241008081842_InitialCreate.Designer.cs
 apis/Migrations/ApplicationDbContextModelSnapshot.cs
 apis/Migrations/ApplicationDbContextModelSnapshot.cs
+apis/obj/Debug/net8.0/apis.AssemblyInfo.cs
+apis/obj/Debug/net8.0/apis.AssemblyInfoInputs.cache
