@@ -11,11 +11,11 @@ namespace apis.Controllers
 {
     [Route("api/moudle-api-endpoint")] // sample : [Route("api/user")], [Route("api/sales")], [Route("api/registration")]
     [ApiController]
-    public class GoodsController : ControllerBase
+    public class ModuleController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public GoodsController(ApplicationDbContext dbContext)
+        public ModuleController(ApplicationDbContext dbContext)
         {
             _context = dbContext;
         }
