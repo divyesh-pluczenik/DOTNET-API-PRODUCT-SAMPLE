@@ -31,124 +31,104 @@ namespace apis.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("TGD_PK"));
 
                     b.Property<string>("TGD_APPRAI")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_AQP")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("TGD_ATOMIC")
+                    b.Property<bool?>("TGD_ATOMIC")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("TGD_CERTDA")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("TGD_CERTNR")
+                    b.Property<long?>("TGD_CERTNR")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("TGD_CERTPK")
+                    b.Property<long?>("TGD_CERTPK")
                         .HasColumnType("bigint");
 
                     b.Property<string>("TGD_CLARI2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_CLARI3")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_CLARIT")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_COLOR")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_COLORE")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_COLORF")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_COLORT")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TGD_CRHEIG")
+                    b.Property<int?>("TGD_CRHEIG")
                         .HasColumnType("int");
 
                     b.Property<string>("TGD_CULET")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_CUT")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TGD_DOCNR")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TGD_DOCNR")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TGD_DRILLE")
+                    b.Property<bool?>("TGD_DRILLE")
                         .HasColumnType("bit");
 
                     b.Property<string>("TGD_FLUORE")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_GIRDL2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_GIRDLE")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_INFO")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_LAB")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_LABELC")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_MAKE")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_MAKEFR")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_MAKETO")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TGD_MEASU2")
+                    b.Property<decimal?>("TGD_MEASU2")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("TGD_MEASU3")
+                    b.Property<decimal?>("TGD_MEASU3")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("TGD_MEASUR")
+                    b.Property<decimal?>("TGD_MEASUR")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TGD_ORDER")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TGD_PNR")
                         .HasColumnType("int");
 
                     b.Property<string>("TGD_POLISH")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TGD_PRICEE")
@@ -160,7 +140,7 @@ namespace apis.Migrations
                     b.Property<decimal>("TGD_PRICEM")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<long>("TGD_REF")
+                    b.Property<long?>("TGD_REF")
                         .HasColumnType("bigint");
 
                     b.Property<string>("TGD_SHAPE")
@@ -168,40 +148,33 @@ namespace apis.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_SHAPE1")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_SHAPE2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_SHAPE3")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_SHAPE4")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TGD_STATUS")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TGD_STONES")
                         .HasColumnType("int");
 
                     b.Property<string>("TGD_SYMMET")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TGD_TABLEW")
+                    b.Property<int?>("TGD_TABLEW")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TGD_TOTDEP")
+                    b.Property<decimal?>("TGD_TOTDEP")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TGD_TYPE")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TGD_WEIGHT")

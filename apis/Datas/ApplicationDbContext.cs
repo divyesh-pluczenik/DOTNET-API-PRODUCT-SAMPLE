@@ -9,14 +9,13 @@ namespace RoughDataWebApi.apis.Datas
         {
         }
 
-        public DbSet<Goods> Goods { get; set; }
+        public DbSet<TableModel> TableModel { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Goods>()
-                .ToTable("Goods")
-                // .ToTable("theirGoodsd")
-                .HasKey(g => g.TGD_PK);
+            modelBuilder.Entity<TableModel>()
+                .ToTable("TableName")
+                .HasKey(g => g.COL_1_LONG_PK); // define pK
 
             base.OnModelCreating(modelBuilder);
         }
