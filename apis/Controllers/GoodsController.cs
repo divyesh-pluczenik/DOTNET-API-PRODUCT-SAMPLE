@@ -21,39 +21,53 @@ namespace apis.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync(string? searchDocnr = null, int page = 1, int pageSize = 10)
         {
-            var results = new Dictionary<string, object>
-            {
+            var results = new Dictionary<string, object>{
                 { "success", false },
-                { "data", new List<object>() },
                 { "message", "Server Error" },
-                { "count", 0 }
+                { "count", 0 },
+                { "data", new List<object>() },
             };
 
             if (_context.Goods == null)
             {
                 results["message"] = "No goods available.";
-                return Ok(results);
+                return NotFound(results);
             }
 
-            var goods = await _context.Goods.ToListAsync();
+            var query = _context.Goods.AsQueryable();
 
-            if (goods.Any())
+            if (!string.IsNullOrWhiteSpace(searchDocnr))
             {
-                var goodsDto = goods.Select(g => new GoodsDto(g)).ToList(); // Pass the Goods entity to GoodsDto
+                query = query.Where(g => g.TGD_DOCNR.Contains(searchDocnr));
+            }
+            
+            var totalCount = await query.CountAsync();
+
+            
+            var goods = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            if (!goods.Any())
+            {
+                var goodsDto = goods.Select(g => new GoodsDto(g)).ToList();
 
                 results["success"] = true;
                 results["message"] = "Records found successfully";
-                results["data"] = goodsDto;
                 results["count"] = goodsDto.Count;
+                results["data"] = goodsDto;
+                return Ok(results);
             }
             else
             {
                 results["message"] = "Records not found.";
+                return BadRequest(results);
             }
 
-            return Ok(results);
         }
+
     }
 }
